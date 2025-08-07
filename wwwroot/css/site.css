@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+  transition: color-scheme 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Dark mode transitions */
+[data-bs-theme="dark"] .navbar {
+  background-color: #2b3035;
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: #2b3035;
+  border-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .form-control {
+  background-color: #1a1d20;
+  border-color: #373b3e;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+  background-color: #1a1d20;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+/* Toggle switch customization */
+.form-switch .form-check-input {
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Dark mode specific styles */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #212529;
+    --bs-body-color: #dee2e6;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #2b3035 !important;
+}
+
+[data-bs-theme="dark"] .navbar-brand {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .nav-link {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #2b3035;
+    border-color: #373b3e;
+}
+
+[data-bs-theme="dark"] .form-control {
+    background-color: #1a1d20;
+    border-color: #373b3e;
+    color: #fff;
+}
+
+/* Toggle switch styling */
+.form-switch .form-check-input {
+    height: 1.5em;
+    width: 3em;
+    cursor: pointer;
+}
+
+.form-check-label {
+    margin-left: 0.5rem;
+    font-size: 1.2em;
+    cursor: pointer;
+}

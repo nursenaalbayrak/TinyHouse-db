@@ -1,0 +1,50 @@
+@model List<Veritabanı_proje.Models.Reservation>
+@{
+    ViewData["Title"] = "Rezervasyonlarım";
+}
+
+<h2>Rezervasyonlarım</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ev</th>
+            <th>Kiracı</th>
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            <th>Durum</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var reservation in Model)
+    {
+        <tr>
+            <td>@reservation.TinyHouse?.Name</td>
+            <td>@reservation.User?.FirstName @reservation.User?.LastName</td>
+            <td>@reservation.StartDate.ToShortDateString()</td>
+            <td>@reservation.EndDate.ToShortDateString()</td>
+            <td>@reservation.Status</td>
+            <td>
+                @if (reservation.Status == "Beklemede")
+                {
+                    <form asp-action="UpdateReservationStatus" method="post" style="display:inline;">
+                        <input type="hidden" name="reservationId" value="@reservation.Id" />
+                        <input type="hidden" name="status" value="Onaylandı" />
+                        <button type="submit" class="btn btn-success btn-sm">Onayla</button>
+                    </form>
+                    <form asp-action="UpdateReservationStatus" method="post" style="display:inline;">
+                        <input type="hidden" name="reservationId" value="@reservation.Id" />
+                        <input type="hidden" name="status" value="Reddedildi" />
+                        <button type="submit" class="btn btn-danger btn-sm">Reddet</button>
+                    </form>
+                }
+                else
+                {
+                    <span>-</span>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

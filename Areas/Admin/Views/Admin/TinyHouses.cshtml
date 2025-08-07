@@ -1,0 +1,37 @@
+@model IEnumerable<Veritabanı_proje.Models.TinyHouse>
+
+<div class="container mt-4">
+    <h2>İlan Yönetimi</h2>
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Henüz bir Tiny House eklenmemiş.
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var house in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@house.Name</h5>
+                            <p class="card-text">@house.Description</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Fiyat:</strong> ₺@house.Price/gece</li>
+                                <li><strong>Konum:</strong> @house.Location</li>
+                                <li><strong>Alan:</strong> @house.SquareMeters m²</li>
+                                <li><strong>Durum:</strong> @(house.IsActive ? "Aktif" : "Pasif")</li>
+                            </ul>
+                            <div class="btn-group w-100">
+                                <a asp-action="EditTinyHouse" asp-route-id="@house.Id" class="btn btn-primary">Düzenle</a>
+                                <a asp-action="DeleteTinyHouse" asp-route-id="@house.Id" class="btn btn-danger">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div> 

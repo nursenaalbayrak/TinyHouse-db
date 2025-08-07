@@ -1,0 +1,21 @@
+@model Reservation
+
+<h2>Ödeme Yap</h2>
+<p>Rezervasyon #: @Model.Id</p>
+<p>Tutar: ₺@Model.TotalPrice</p>
+
+<div>
+    <strong>Ödeme Durumu:</strong> @ViewBag.PaymentStatus
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <label>Ödeme Yöntemi</label>
+        <select name="paymentMethod" class="form-control">
+            <option>Kredi Kartı</option>
+            <option>Banka Kartı</option>
+            <option>Havale/EFT</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Ödeme Yap</button>
+</form>

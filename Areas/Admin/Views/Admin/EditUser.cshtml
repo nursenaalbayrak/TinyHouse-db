@@ -1,0 +1,48 @@
+@model Veritabanı_proje.Models.User
+
+@{
+    ViewData["Title"] = "Kullanıcıyı Düzenle";
+}
+
+<div class="container mt-4">
+    <h2>Kullanıcıyı Düzenle</h2>
+    <form asp-action="EditUser" asp-area="Admin" asp-controller="Admin" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group mb-2">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label asp-for="Role"></label>
+            <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<Veritabanı_proje.Models.Role>()"></select>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label asp-for="IsActive"></label>
+            <input asp-for="IsActive" type="checkbox" class="form-check-input" />
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
+        <a asp-action="Users" asp-area="Admin" asp-controller="Admin" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

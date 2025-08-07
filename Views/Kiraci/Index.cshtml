@@ -1,0 +1,99 @@
+@model KiraciDashboardViewModel
+@{
+    ViewData["Title"] = "Kiracı Paneli";
+}
+
+<div class="container mt-4">
+    <h2>Hoş Geldiniz, @Model.User?.FirstName</h2>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Aktif Rezervasyonlarım</h4>
+                    @if (!Model.ActiveReservations.Any())
+                    {
+                        <p>Aktif rezervasyonunuz bulunmamaktadır.</p>
+                    }
+                    else
+                    {
+                        <div class="list-group">
+                            @foreach (var reservation in Model.ActiveReservations)
+                            {
+                                <div class="list-group-item">
+                                    <h5>@reservation.TinyHouse?.Name</h5>
+                                    <p>@reservation.StartDate.ToShortDateString() - @reservation.EndDate.ToShortDateString()</p>
+                                    @if (reservation.Status != "Ödeme Alındı")
+                                    {
+                                        <a href="@Url.Action("Pay", "Payment", new { reservationId = reservation.Id })" class="btn btn-sm btn-success">Ödeme Yap</a>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Ödendi</span>
+                                    }
+                                    <form asp-action="CancelReservation" method="post" style="display:inline;">
+                                        <input type="hidden" name="reservationId" value="@reservation.Id" />
+                                        <button type="submit" class="btn btn-danger btn-sm">İptal Et</button>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Geçmiş Rezervasyonlarım</h4>
+                    @if (!Model.PastReservations.Any())
+                    {
+                        <p>Geçmiş rezervasyonunuz bulunmamaktadır.</p>
+                    }
+                    else
+                    {
+                        <div class="list-group">
+                            @foreach (var reservation in Model.PastReservations)
+                            {
+                                <div class="list-group-item">
+                                    <h5>@reservation.TinyHouse?.Name</h5>
+                                    <p>@reservation.StartDate.ToShortDateString() - @reservation.EndDate.ToShortDateString()</p>
+                                    <a href="@Url.Action("AddReview", "Kiraci", new { reservationId = reservation.Id })" class="btn btn-sm btn-warning">Yorum Ekle</a>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Müsait Evler</h4>
+                    <div class="row">
+                        @foreach (var house in Model.AvailableHouses)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>@house.Name</h5>
+                                        <p>@house.Description</p>
+                                        <a asp-action="HouseDetails" 
+                                           asp-route-id="@house.Id" 
+                                           class="btn btn-primary">
+                                            Detayları Gör
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

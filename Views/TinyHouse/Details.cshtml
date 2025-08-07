@@ -1,0 +1,137 @@
+@model TinyHouse
+@{
+    ViewData["Title"] = Model.Name;
+    // var amenities = Model.Amenities != null 
+    //     ? System.Text.Json.JsonSerializer.Deserialize<List<string>>(Model.Amenities) 
+    //     : new List<string>();
+    var photos = Model.Photos != null 
+        ? System.Text.Json.JsonSerializer.Deserialize<List<string>>(Model.Photos) 
+        : new List<string>();
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">@Model.Name</h2>
+            
+            @if (!string.IsNullOrEmpty(Model.Photos))
+            {
+                if (photos?.Any() == true)
+                {
+                    <div id="carouselPhotos" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @for (int i = 0; i < photos.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@photos[i]" class="d-block w-100" alt="Ev fotoğrafı" style="height: 400px; object-fit: cover;">
+                                </div>
+                            }
+                        </div>
+                        @if (photos.Count > 1)
+                        {
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Önceki</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Sonraki</span>
+                            </button>
+                        }
+                    </div>
+                }
+            }
+
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h4>Ev Detayları</h4>
+                    <p class="card-text">@Model.Description</p>
+                    
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item">
+                            <strong>Fiyat:</strong> ₺@Model.Price/gece
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Konum:</strong> @Model.Location
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Alan:</strong> @Model.SquareMeters m²
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Yatak Sayısı:</strong> @Model.Beds
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Banyo Sayısı:</strong> @Model.Bathrooms
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Ev Sahibi:</strong> @(Model.Owner?.FirstName ?? "Bilinmiyor") @(Model.Owner?.LastName ?? "")
+                        </li>
+                    </ul>
+
+                    @if (Model.Reviews != null && Model.Reviews.Any())
+                    {
+                        <div class="mt-4">
+                            <h4>Değerlendirmeler</h4>
+                            @foreach (var review in Model.Reviews)
+                            {
+                                <div class="card mb-2">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="card-subtitle mb-2 text-muted">
+                                                @(review.User?.FirstName ?? "Misafir")
+                                            </h6>
+                                            <div>
+                                                @for (int i = 0; i < review.Rating; i++)
+                                                {
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                }
+                                            </div>
+                                        </div>
+                                        <p class="card-text">@review.Comment</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+
+                <div class="col-md-4">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Rezervasyon Yap</h4>
+                                <form asp-controller="Kiraci" asp-action="MakeReservation" method="post">
+                                    <input type="hidden" name="houseId" value="@Model.Id" />
+                                    
+                                    <div class="form-group mb-3">
+                                        <label>Giriş Tarihi</label>
+                                        <input type="date" name="startDate" class="form-control" required 
+                                               min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <label>Çıkış Tarihi</label>
+                                        <input type="date" name="endDate" class="form-control" required 
+                                               min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        Rezervasyon Yap
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            Rezervasyon yapabilmek için lütfen 
+                            <a asp-controller="Account" asp-action="Login">giriş yapın</a>.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,44 @@
+@model List<Veritabanı_proje.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Geçmiş Rezervasyonlar";
+}
+
+<h2>Geçmiş Rezervasyonlar</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Geçmiş rezervasyonunuz bulunmamaktadır.</div>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ev</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+                <th>Toplam Fiyat</th>
+                <th>Durum</th>
+                <th>Yorum</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.TinyHouse?.Name</td>
+                <td>@reservation.StartDate.ToShortDateString()</td>
+                <td>@reservation.EndDate.ToShortDateString()</td>
+                <td>@reservation.TotalPrice ₺</td>
+                <td>@reservation.Status</td>
+                <td>
+                    <a href="@Url.Action("AddReview", "Kiraci", new { reservationId = reservation.Id })" class="btn btn-sm btn-warning">
+                        Yorum Ekle
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

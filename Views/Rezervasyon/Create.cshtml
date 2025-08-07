@@ -1,0 +1,36 @@
+@model Rezervasyon
+
+<div class="container mt-4">
+    <h2>Yeni Rezervasyon</h2>
+    <form asp-action="Create" method="post">
+        <input type="hidden" asp-for="EvId" />
+        <input type="hidden" asp-for="UserId" />
+        
+        <div class="form-group">
+            <label asp-for="MusteriAdi">Adınız</label>
+            <input asp-for="MusteriAdi" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MusteriSoyadi">Soyadınız</label>
+            <input asp-for="MusteriSoyadi" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Telefon">Telefon</label> 
+            <input asp-for="Telefon" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BaslangicTarihi">Giriş Tarihi</label>
+            <input asp-for="BaslangicTarihi" type="date" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BitisTarihi">Çıkış Tarihi</label>
+            <input asp-for="BitisTarihi" type="date" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Rezervasyon Yap</button>
+    </form>
+</div> 

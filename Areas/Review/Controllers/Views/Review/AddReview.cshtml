@@ -1,0 +1,16 @@
+@model Veritabanı_proje.Models.Review
+
+<h2>Yorum ve Puan Ekle</h2>
+<form asp-action="AddReview" method="post">
+    <input type="hidden" asp-for="TinyHouseId" />
+    <input type="hidden" asp-for="UserId" />
+    <div class="form-group">
+        <label>Puan (1-5):</label>
+        <input asp-for="Rating" type="number" min="1" max="5" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Yorum:</label>
+        <textarea asp-for="Comment" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Kaydet</button>
+</form>

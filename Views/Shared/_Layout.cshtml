@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Veritabanı_proje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Veritabanı_proje.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="/">Tiny House</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @{
+                            var userId = Context.Session.GetInt32("UserId");
+                            var userRole = Context.Session.GetString("UserRole");
+                        }
+
+                        @if (userId == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="TinyHouses" asp-action="Index">Evler</a>
+                            </li>
+                        }
+                        else
+                        {
+                            @if (userRole == "0") // Admin
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin Panel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="AdminTinyHouses" asp-action="Index">Evleri Yönet</a>
+                                </li>
+                            }
+                            @if (userRole == "1") // EvSahibi
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="EvSahibi" asp-action="Index">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="EvSahibi" asp-action="CreateTinyHouse">Yeni İlan Ekle</a>
+                                </li>
+                            }
+                            @if (userRole == "2") // Kiracı
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Kiraci" asp-action="Index">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="TinyHouses" asp-action="Index">Ev Ara</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (userId != null)
+                        {
+                            var userName = Context.Session.GetString("UserName");
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Hoş geldiniz, @userName!</span>
+                            </li>
+                            <li class="nav-item">
+                                <form class="form-inline" asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+    <button type="submit" class="btn btn-outline-danger">Çıkış Yap</button>
+</form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-light text-center text-muted py-3 mt-5">
+        © @DateTime.Now.Year Tiny House | Tüm hakları saklıdır.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.querySelector('html');
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            html.setAttribute('data-bs-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+
+        // Toggle dark mode
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('darkMode', 'true');
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('text-dark');
+                    link.classList.add('text-light');
+                });
+            } else {
+                html.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('darkMode', 'false');
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('text-light');
+                    link.classList.add('text-dark');
+                });
+            }
+        });
+
+        // Initial state check
+        if (html.getAttribute('data-bs-theme') === 'dark') {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-dark');
+                link.classList.add('text-light');
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

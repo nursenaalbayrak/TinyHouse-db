@@ -1,0 +1,28 @@
+@model TinyHouse
+
+<div class="container mt-4">
+    <h2>Tiny House Sil</h2>
+    
+    <div class="alert alert-danger">
+        <h4>Bu tiny house'u silmek istediğinizden emin misiniz?</h4>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Fiyat:</strong> @Model.Price.ToString("C")</li>
+                <li class="list-group-item"><strong>Konum:</strong> @Model.Location</li>
+                <li class="list-group-item"><strong>Alan:</strong> @Model.SquareMeters m²</li>
+            </ul>
+            
+            <form asp-action="Delete" method="post" class="mt-3">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Sil</button>
+                <a asp-action="Index" class="btn btn-secondary">İptal</a>
+            </form>
+        </div>
+    </div>
+</div> 

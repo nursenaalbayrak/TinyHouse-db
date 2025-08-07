@@ -1,0 +1,21 @@
+@model Veritabanı_proje.Models.Review
+
+@{
+    ViewData["Title"] = "Yorum Ekle";
+}
+
+<h2>Yorum Ekle</h2>
+
+<form asp-action="AddReview" method="post">
+    <input type="hidden" asp-for="TinyHouseId" />
+    <input type="hidden" asp-for="UserId" />
+    <div class="form-group">
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating" class="form-control" type="number" min="1" max="5" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Comment"></label>
+        <textarea asp-for="Comment" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Yorumu Kaydet</button>
+</form>

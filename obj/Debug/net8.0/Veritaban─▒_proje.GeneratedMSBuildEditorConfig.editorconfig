@@ -1,0 +1,185 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Veritaban─▒_proje
+build_property.RootNamespace = Veritaban─▒_proje
+build_property.ProjectDir = C:\Users\Excalibur\Desktop\cbü\Veritaban─▒_proje\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Excalibur\Desktop\cbü\Veritaban─▒_proje
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/Reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cUmVwb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/TinyHouses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cVGlueUhvdXNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Admin/Views/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Areas/Review/Controllers/Views/Review/AddReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmV2aWV3XENvbnRyb2xsZXJzXFZpZXdzXFJldmlld1xBZGRSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Admin/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/EvSahibi/CreateTinyHouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZTYWhpYmlcQ3JlYXRlVGlueUhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/EvSahibi/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZTYWhpYmlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/EvSahibi/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZTYWhpYmlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/EvSahibi/Reservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZTYWhpYmlcUmVzZXJ2YXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/EvSahibi/TinyHouses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZTYWhpYmlcVGlueUhvdXNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Kiraci/AddReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWNpXEFkZFJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Kiraci/GecmisRezervasyonlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWNpXEdlY21pc1JlemVydmFzeW9ubGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Kiraci/HouseDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWNpXEhvdXNlRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Kiraci/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Payment/Pay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxQYXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Rezervasyonlar/AktifRezervasyonlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25sYXJcQWt0aWZSZXplcnZhc3lvbmxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Rezervasyonlar/GecmisRezervasyonlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25sYXJcR2VjbWlzUmV6ZXJ2YXN5b25sYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Rezervasyon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouse/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouse/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouse/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouse/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/TinyHouse/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlueUhvdXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Excalibur/Desktop/cbü/Veritaban─▒_proje/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3uwz7ffng5

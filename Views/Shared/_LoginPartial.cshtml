@@ -1,0 +1,29 @@
+@using Microsoft.AspNetCore.Identity
+
+@{
+    var userId = Context.Session.GetInt32("UserId");
+    var userName = Context.Session.GetString("UserName");
+}
+
+<ul class="navbar-nav">
+@if (userId != null)
+{
+    <li class="nav-item">
+        <span class="nav-link text-dark">Hoş geldiniz, @userName!</span>
+    </li>
+    <li class="nav-item">
+        <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-outline-danger">Çıkış Yap</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+    </li>
+}
+</ul> 

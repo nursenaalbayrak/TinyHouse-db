@@ -1,0 +1,32 @@
+@model IEnumerable<TinyHouse>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Tiny Houses</h1>
+        <a href="/TinyHouse/Create" class="btn btn-primary">Yeni Tiny House Ekle</a>
+    </div>
+
+    <div class="row">
+        @foreach (var house in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@house.Name</h5>
+                        <p class="card-text">@house.Description</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Fiyat:</strong> @house.Price.ToString("C")</li>
+                            <li><strong>Konum:</strong> @house.Location</li>
+                            <li><strong>Alan:</strong> @house.SquareMeters m²</li>
+                        </ul>
+                        <div class="btn-group">
+                            <a href="/TinyHouse/Details/@house.Id" class="btn btn-info">Detay</a>
+                            <a href="/TinyHouse/Edit/@house.Id" class="btn btn-warning">Düzenle</a>
+                            <a href="/TinyHouse/Delete/@house.Id" class="btn btn-danger">Sil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div> 

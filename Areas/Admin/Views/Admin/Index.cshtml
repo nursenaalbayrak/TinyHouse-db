@@ -1,0 +1,41 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Veritabanı_proje.Models.ViewModels.AdminDashboardViewModel
+
+<div class="container mt-4">
+    <h2>Admin Panel</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Kullanıcı</h5>
+                    <p class="card-text display-4">@Model.TotalUsers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Ev</h5>
+                    <p class="card-text display-4">@Model.TotalTinyHouses</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Rezervasyon</h5>
+                    <p class="card-text display-4">@Model.TotalReservations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <a asp-area="Admin" asp-controller="Admin" asp-action="Users" class="btn btn-primary w-100">Kullanıcıları Yönet</a>
+        </div>
+        <div class="col-md-6">
+            <a asp-area="Admin" asp-controller="Admin" asp-action="TinyHouses" class="btn btn-success w-100">Evleri Yönet</a>
+        </div>
+    </div>
+</div> 

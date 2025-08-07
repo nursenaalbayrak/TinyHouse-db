@@ -1,0 +1,63 @@
+@model IEnumerable<User>
+
+<div class="container-fluid mt-4">
+    <h2>Kullanıcı Yönetimi</h2>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <form asp-action="Users" method="get" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" name="searchString" class="form-control" placeholder="Kullanıcı ara...">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Ara</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.FirstName</td>
+                                <td>@user.LastName</td>
+                                <td>@user.Email</td>
+                                <td>@user.Role</td>
+                                <td>
+                                    @if (user.IsActive)
+                                    {
+                                        <span class="badge bg-success">Aktif</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">Pasif</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="EditUser" asp-route-id="@user.Id" class="btn btn-sm btn-primary">Düzenle</a>
+                                    <a asp-action="DeleteUser" asp-route-id="@user.Id" class="btn btn-sm btn-danger">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> 

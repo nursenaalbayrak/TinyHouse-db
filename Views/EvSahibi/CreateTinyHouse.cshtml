@@ -1,0 +1,96 @@
+@model TinyHouse
+@{
+    ViewData["Title"] = "Yeni İlan Ekle";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Yeni İlan Ekle</h2>
+
+            <form asp-action="CreateTinyHouse" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="Price" class="control-label"></label>
+                            <input asp-for="Price" class="form-control" type="number" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="Location" class="control-label"></label>
+                            <input asp-for="Location" class="form-control" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="SquareMeters" class="control-label"></label>
+                            <input asp-for="SquareMeters" class="form-control" type="number" />
+                            <span asp-validation-for="SquareMeters" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="Beds" class="control-label"></label>
+                            <input asp-for="Beds" class="form-control" type="number" />
+                            <span asp-validation-for="Beds" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="Bathrooms" class="control-label"></label>
+                            <input asp-for="Bathrooms" class="form-control" type="number" />
+                            <span asp-validation-for="Bathrooms" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Özellikler</label>
+                    <select name="amenities" class="form-control" multiple>
+                        <option value="Wifi">Wifi</option>
+                        <option value="TV">TV</option>
+                        <option value="Klima">Klima</option>
+                        <option value="Çamaşır Makinesi">Çamaşır Makinesi</option>
+                        <option value="Bulaşık Makinesi">Bulaşık Makinesi</option>
+                        <option value="Otopark">Otopark</option>
+                        <option value="Havuz">Havuz</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Fotoğraflar</label>
+                    <input type="file" name="photos" multiple class="form-control" accept="images/*" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">İlanı Yayınla</button>
+                    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

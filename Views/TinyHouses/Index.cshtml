@@ -1,0 +1,44 @@
+@model IEnumerable<TinyHouse>
+@{
+    ViewData["Title"] = "Tiny Houses";
+}
+
+<div class="container mt-4">
+    <h2>Tiny Houses</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Henüz listelenmiş tiny house bulunmamaktadır.
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var house in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@house.Name</h5>
+                            <p class="card-text">@house.Description</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Fiyat:</strong> ₺@house.Price/gece</li>
+                                <li><strong>Konum:</strong> @house.Location</li>
+                                <li><strong>Alan:</strong> @house.SquareMeters m²</li>
+                                <li><strong>Ev Sahibi:</strong> @(house.Owner?.FirstName ?? "Bilinmiyor") @(house.Owner?.LastName ?? "")</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="Details" 
+                               asp-route-id="@house.Id" 
+                               class="btn btn-primary w-100">
+                                Detayları Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div> 

@@ -1,0 +1,2 @@
+ALTER TABLE TinyHouses
+ADD COLUMN UpdatedAt DATETIME NULL; 

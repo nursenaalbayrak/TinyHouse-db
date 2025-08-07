@@ -1,0 +1,73 @@
+@model AdminDashboardViewModel
+
+<div class="container-fluid mt-4">
+    <h2>Admin Dashboard</h2>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Kullanıcı</h5>
+                    <p class="card-text display-4">@Model.TotalUsers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Aktif Kullanıcı</h5>
+                    <p class="card-text display-4">@Model.ActiveUsers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Tiny House</h5>
+                    <p class="card-text display-4">@Model.TotalTinyHouses</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Rezervasyon</h5>
+                    <p class="card-text display-4">@Model.TotalReservations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Hızlı İşlemler
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a asp-action="Users" class="list-group-item list-group-item-action">
+                            Kullanıcı Yönetimi
+                        </a>
+                        <a asp-action="TinyHouses" class="list-group-item list-group-item-action">
+                            İlan Yönetimi
+                        </a>
+                        <a asp-action="Reports" class="list-group-item list-group-item-action">
+                            Mali Raporlar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Son İşlemler
+                </div>
+                <div class="card-body">
+                    <p>Son işlemler burada listelenecek...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
